@@ -45,7 +45,7 @@ Clear the screen and print the command list.
 
 h<br />
 Command history.<br />
-#############################################################################<<br />
+#############################################################################<br />
 
 When not running in server mode, the window shows a create/edit form and a
 canvas.
