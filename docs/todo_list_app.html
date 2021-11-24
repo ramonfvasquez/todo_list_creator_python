@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module todo_list_app</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>todo_list_app</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hermes/Code/utn/diplomatura_python/modulo_3/todo_list/todo_list_app.py">/home/hermes/Code/utn/diplomatura_python/modulo_3/todo_list/todo_list_app.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;is&nbsp;a&nbsp;ToDo&nbsp;List&nbsp;application&nbsp;that&nbsp;allows&nbsp;the&nbsp;user&nbsp;to&nbsp;create,&nbsp;edit,&nbsp;and<br>
+delete&nbsp;todos&nbsp;with&nbsp;a&nbsp;text&nbsp;limit&nbsp;of&nbsp;150&nbsp;characters.&nbsp;It&nbsp;is&nbsp;built&nbsp;with&nbsp;the<br>
+Tkinter&nbsp;library.<br>
+&nbsp;<br>
+At&nbsp;load&nbsp;it&nbsp;asks&nbsp;the&nbsp;user&nbsp;to&nbsp;decide&nbsp;whether&nbsp;the&nbsp;program&nbsp;should&nbsp;open&nbsp;the&nbsp;ToDo<br>
+List&nbsp;main&nbsp;window&nbsp;or&nbsp;if&nbsp;it&nbsp;should&nbsp;run&nbsp;in&nbsp;server&nbsp;mode,&nbsp;i.e.&nbsp;a&nbsp;server&nbsp;socket<br>
+is&nbsp;ran&nbsp;instead&nbsp;of&nbsp;the&nbsp;application&nbsp;so&nbsp;as&nbsp;to&nbsp;receive&nbsp;and&nbsp;respond&nbsp;different<br>
+requests&nbsp;from&nbsp;a&nbsp;client&nbsp;application&nbsp;(client.py).&nbsp;The&nbsp;server.py&nbsp;module&nbsp;can<br>
+run&nbsp;as&nbsp;a&nbsp;standalone&nbsp;program.<br>
+&nbsp;<br>
+When&nbsp;not&nbsp;running&nbsp;in&nbsp;server&nbsp;mode,&nbsp;the&nbsp;window&nbsp;shows&nbsp;a&nbsp;create/edit&nbsp;form&nbsp;and&nbsp;a<br>
+canvas.<br>
+&nbsp;<br>
+The&nbsp;form&nbsp;bears&nbsp;an&nbsp;Entry&nbsp;for&nbsp;the&nbsp;text,&nbsp;a&nbsp;DateEntry,&nbsp;two&nbsp;Spins&nbsp;(one&nbsp;for&nbsp;the<br>
+hours,&nbsp;one&nbsp;for&nbsp;the&nbsp;minutes,&nbsp;both&nbsp;max&nbsp;values&nbsp;of&nbsp;which&nbsp;are&nbsp;limited&nbsp;accordingly),<br>
+and&nbsp;a&nbsp;creation&nbsp;button&nbsp;(labeled&nbsp;with&nbsp;a&nbsp;"+";&nbsp;it&nbsp;is&nbsp;replaced&nbsp;for&nbsp;an&nbsp;"Edit"<br>
+button&nbsp;when&nbsp;any&nbsp;of&nbsp;the&nbsp;todos'&nbsp;edition&nbsp;buttons&nbsp;are&nbsp;clicked).<br>
+&nbsp;<br>
+All&nbsp;the&nbsp;todos&nbsp;saved&nbsp;into&nbsp;the&nbsp;database&nbsp;will&nbsp;be&nbsp;inserted&nbsp;into&nbsp;the&nbsp;canvas&nbsp;as<br>
+follows:&nbsp;one&nbsp;main&nbsp;square&nbsp;of&nbsp;200x200&nbsp;with&nbsp;a&nbsp;fill&nbsp;color&nbsp;chose&nbsp;by&nbsp;the&nbsp;user;&nbsp;a<br>
+little&nbsp;black&nbsp;rectangle&nbsp;on&nbsp;top&nbsp;that&nbsp;shows&nbsp;the&nbsp;date&nbsp;and&nbsp;time&nbsp;(or&nbsp;an&nbsp;"Expired"<br>
+message&nbsp;when&nbsp;the&nbsp;time&nbsp;is&nbsp;older&nbsp;than&nbsp;the&nbsp;present&nbsp;time);&nbsp;a&nbsp;dark&nbsp;blue,&nbsp;and&nbsp;a<br>
+dark&nbsp;red&nbsp;rectangles&nbsp;(the&nbsp;former&nbsp;acts&nbsp;as&nbsp;the&nbsp;"Edit"&nbsp;button;&nbsp;the&nbsp;latter&nbsp;as&nbsp;the<br>
+"Delete"&nbsp;button),&nbsp;both&nbsp;of&nbsp;wich&nbsp;have&nbsp;a&nbsp;width&nbsp;of&nbsp;half&nbsp;the&nbsp;square's&nbsp;width.&nbsp;Each<br>
+of&nbsp;these&nbsp;two&nbsp;buttons&nbsp;is&nbsp;bind&nbsp;with&nbsp;its&nbsp;corresponding&nbsp;method.<br>
+&nbsp;<br>
+When&nbsp;editing&nbsp;a&nbsp;todo,&nbsp;the&nbsp;form&nbsp;will&nbsp;fill&nbsp;with&nbsp;all&nbsp;the&nbsp;todo&nbsp;data,&nbsp;including&nbsp;the<br>
+color,&nbsp;except&nbsp;when&nbsp;the&nbsp;todo&nbsp;is&nbsp;expired&nbsp;and&nbsp;its&nbsp;color&nbsp;is&nbsp;grey,&nbsp;in&nbsp;which&nbsp;case<br>
+the&nbsp;color&nbsp;selected&nbsp;in&nbsp;the&nbsp;color&nbsp;combobox&nbsp;is&nbsp;the&nbsp;first&nbsp;option.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="db.data_base.html">db.data_base</a><br>
+</td><td width="25%" valign=top><a href="server.html">server</a><br>
+</td><td width="25%" valign=top><a href="tkinter.ttk.html">tkinter.ttk</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="todo_list_app.html#ToDoListApp">ToDoListApp</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ToDoListApp">class <strong>ToDoListApp</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ToDoListApp">ToDoListApp</a>(root)<br>
+&nbsp;<br>
+Application's&nbsp;main&nbsp;window.<br>
+It&nbsp;has&nbsp;the&nbsp;form&nbsp;for&nbsp;creating/editing&nbsp;the&nbsp;todos,&nbsp;and&nbsp;a&nbsp;canvas&nbsp;to&nbsp;show&nbsp;the<br>
+todos&nbsp;stored&nbsp;in&nbsp;the&nbsp;database.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ToDoListApp-__init__"><strong>__init__</strong></a>(self, root)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-clear_canvas"><strong>clear_canvas</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;canvas&nbsp;and&nbsp;reset&nbsp;the&nbsp;coordinates&nbsp;before&nbsp;showing&nbsp;all&nbsp;the<br>
+todos&nbsp;stored&nbsp;in&nbsp;the&nbsp;DB.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-color_selection"><strong>color_selection</strong></a>(self, event)</dt><dd><tt>Change&nbsp;the&nbsp;background&nbsp;colors&nbsp;of&nbsp;the&nbsp;creation/edition&nbsp;frame&nbsp;and&nbsp;of&nbsp;its<br>
+children&nbsp;on&nbsp;color&nbsp;combobox&nbsp;selection&nbsp;change.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-create_todo"><strong>create_todo</strong></a>(self)</dt><dd><tt>Call&nbsp;the&nbsp;create()&nbsp;method&nbsp;from&nbsp;the&nbsp;ToDo&nbsp;module,&nbsp;reset&nbsp;the&nbsp;form,&nbsp;and<br>
+show&nbsp;the&nbsp;todos&nbsp;in&nbsp;the&nbsp;canvas.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-delete_todo"><strong>delete_todo</strong></a>(self, id)</dt><dd><tt>Call&nbsp;the&nbsp;delete()&nbsp;method&nbsp;from&nbsp;the&nbsp;ToDo&nbsp;module,&nbsp;reset&nbsp;the&nbsp;form,&nbsp;and<br>
+show&nbsp;the&nbsp;todos&nbsp;in&nbsp;the&nbsp;canvas.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-edit_todo"><strong>edit_todo</strong></a>(self, todo)</dt><dd><tt>Load&nbsp;the&nbsp;form&nbsp;with&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;selected&nbsp;todo,&nbsp;show&nbsp;the&nbsp;Edit<br>
+button&nbsp;in&nbsp;the&nbsp;form.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-grey_out_past_todos"><strong>grey_out_past_todos</strong></a>(self)</dt><dd><tt>Delete&nbsp;from&nbsp;the&nbsp;DB&nbsp;all&nbsp;the&nbsp;todos&nbsp;dated&nbsp;before&nbsp;the&nbsp;present&nbsp;day</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-reset_form"><strong>reset_form</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;todo&nbsp;entry&nbsp;and&nbsp;set&nbsp;the&nbsp;focus&nbsp;on&nbsp;it,&nbsp;set&nbsp;the&nbsp;date&nbsp;to&nbsp;present<br>
+date,&nbsp;set&nbsp;the&nbsp;color&nbsp;to&nbsp;the&nbsp;first&nbsp;one&nbsp;in&nbsp;the&nbsp;combobox,&nbsp;hide&nbsp;the&nbsp;Edit<br>
+button,&nbsp;reset&nbsp;the&nbsp;character&nbsp;counter&nbsp;label.</tt></dd></dl>
+
+<dl><dt><a name="ToDoListApp-show_in_canvas"><strong>show_in_canvas</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;canvas&nbsp;and&nbsp;set&nbsp;all&nbsp;the&nbsp;todos&nbsp;stored&nbsp;in&nbsp;the&nbsp;DB.&nbsp;For&nbsp;each<br>
+todo&nbsp;insert&nbsp;a&nbsp;square&nbsp;of&nbsp;200x200,&nbsp;and&nbsp;within&nbsp;it&nbsp;a&nbsp;black&nbsp;rectangle&nbsp;and<br>
+a&nbsp;white&nbsp;text&nbsp;element&nbsp;to&nbsp;show&nbsp;the&nbsp;todo&nbsp;date&nbsp;on&nbsp;the&nbsp;top;&nbsp;on&nbsp;the&nbsp;bottom,<br>
+insert&nbsp;one&nbsp;black&nbsp;rectangle&nbsp;with&nbsp;the&nbsp;'Edit'&nbsp;text&nbsp;in&nbsp;white,&nbsp;and&nbsp;a&nbsp;dark<br>
+red&nbsp;rectangle&nbsp;with&nbsp;the&nbsp;text&nbsp;'Delete'&nbsp;also&nbsp;in&nbsp;white,&nbsp;both&nbsp;half&nbsp;the<br>
+width&nbsp;of&nbsp;the&nbsp;main&nbsp;square's&nbsp;width.&nbsp;Set&nbsp;the&nbsp;tags&nbsp;for&nbsp;the&nbsp;Edit&nbsp;and<br>
+Delete&nbsp;buttons&nbsp;of&nbsp;each&nbsp;todo&nbsp;to&nbsp;permit&nbsp;their&nbsp;corresponding&nbsp;actions<br>
+when&nbsp;they&nbsp;are&nbsp;clicked.<br>
+&nbsp;<br>
+Within&nbsp;the&nbsp;method&nbsp;there&nbsp;is&nbsp;a&nbsp;call&nbsp;to&nbsp;the&nbsp;canvas'&nbsp;method&nbsp;after()&nbsp;to<br>
+call&nbsp;recursively&nbsp;the&nbsp;method&nbsp;<a href="#ToDoListApp-show_in_canvas">show_in_canvas</a>()&nbsp;every&nbsp;one&nbsp;second.&nbsp;This<br>
+allows&nbsp;to&nbsp;keep&nbsp;the&nbsp;todo&nbsp;list&nbsp;up&nbsp;to&nbsp;date&nbsp;on&nbsp;the&nbsp;canvas.&nbsp;When&nbsp;a&nbsp;todo<br>
+is&nbsp;old,&nbsp;it&nbsp;colors&nbsp;itself&nbsp;in&nbsp;grey.&nbsp;This&nbsp;happens&nbsp;in&nbsp;real&nbsp;time&nbsp;thanks<br>
+to&nbsp;the&nbsp;recursion.<br>
+&nbsp;<br>
+Insert&nbsp;five&nbsp;todos&nbsp;per&nbsp;line.&nbsp;The&nbsp;scrollbar&nbsp;adapts&nbsp;to&nbsp;the&nbsp;increment&nbsp;or<br>
+decrement&nbsp;of&nbsp;todos.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>x0</strong> = 50</dl>
+
+<dl><dt><strong>x1</strong> = 250</dl>
+
+<dl><dt><strong>y0</strong> = 0</dl>
+
+<dl><dt><strong>y1</strong> = 250</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-quit"><strong>quit</strong></a>(root, canvas, id)</dt><dd><tt>Prevent&nbsp;an&nbsp;error&nbsp;with&nbsp;the&nbsp;canvas'&nbsp;after()&nbsp;method&nbsp;when&nbsp;closing<br>
+the&nbsp;program,&nbsp;destroy&nbsp;the&nbsp;window.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>BOTH</strong> = 'both'<br>
+<strong>E</strong> = 'e'<br>
+<strong>FLAT</strong> = 'flat'<br>
+<strong>N</strong> = 'n'<br>
+<strong>S</strong> = 's'<br>
+<strong>VERTICAL</strong> = 'vertical'<br>
+<strong>W</strong> = 'w'</td></tr></table>
+</body></html>

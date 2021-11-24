@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module client</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>client</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hermes/Code/utn/diplomatura_python/modulo_3/todo_list/client.py">/home/hermes/Code/utn/diplomatura_python/modulo_3/todo_list/client.py</a></font></td></tr></table>
+    <p><tt>###################################################################################<br>
+##################################&nbsp;&nbsp;&nbsp;COMMANDS&nbsp;&nbsp;&nbsp;###################################<br>
+###################################################################################<br>
+&nbsp;<br>
+######################################&nbsp;TODOS&nbsp;######################################<br>
+&nbsp;<br>
+...................................................................................<br>
+count<br>
+...................................................................................<br>
+Get&nbsp;the&nbsp;number&nbsp;of&nbsp;todos&nbsp;stored&nbsp;in&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+s&nbsp;/&nbsp;search&nbsp;[text&nbsp;to&nbsp;search]<br>
+...................................................................................<br>
+Search&nbsp;todos&nbsp;by&nbsp;text.&nbsp;If&nbsp;no&nbsp;argument&nbsp;is&nbsp;entered,&nbsp;all&nbsp;todos&nbsp;will&nbsp;be&nbsp;displayed.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+sort&nbsp;[color&nbsp;/&nbsp;date&nbsp;/&nbsp;id&nbsp;/&nbsp;text]&nbsp;[desc]<br>
+...................................................................................<br>
+Get&nbsp;all&nbsp;the&nbsp;todos&nbsp;sorted&nbsp;by&nbsp;the&nbsp;argument&nbsp;entered.<br>
+Optional:&nbsp;enter&nbsp;'desc'&nbsp;to&nbsp;sort&nbsp;downwards.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+todo&nbsp;[del&nbsp;/&nbsp;delete&nbsp;/&nbsp;edit&nbsp;/&nbsp;save]<br>
+...................................................................................<br>
+Open&nbsp;the&nbsp;todo&nbsp;editor.<br>
+Enter&nbsp;'del'&nbsp;or&nbsp;'delete'&nbsp;to&nbsp;remove&nbsp;a&nbsp;todo&nbsp;by&nbsp;its&nbsp;ID&nbsp;number.<br>
+Enter&nbsp;'edit'&nbsp;to&nbsp;update&nbsp;a&nbsp;todo&nbsp;by&nbsp;its&nbsp;ID&nbsp;number.<br>
+Enter&nbsp;'save'&nbsp;to&nbsp;create&nbsp;a&nbsp;new&nbsp;todo.<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+#####################################&nbsp;CONSOLE&nbsp;#####################################<br>
+&nbsp;<br>
+...................................................................................<br>
+clear<br>
+...................................................................................<br>
+Clear&nbsp;the&nbsp;screen.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+clh<br>
+...................................................................................<br>
+Clear&nbsp;the&nbsp;command&nbsp;history.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+close&nbsp;/&nbsp;end&nbsp;/&nbsp;exit&nbsp;/&nbsp;x<br>
+...................................................................................<br>
+Exit&nbsp;client&nbsp;and&nbsp;shut&nbsp;down&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+commands<br>
+...................................................................................<br>
+Clear&nbsp;the&nbsp;screen&nbsp;and&nbsp;print&nbsp;the&nbsp;command&nbsp;list.<br>
+&nbsp;<br>
+&nbsp;<br>
+...................................................................................<br>
+h<br>
+...................................................................................<br>
+Command&nbsp;history.<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+*If&nbsp;no&nbsp;command&nbsp;is&nbsp;entered&nbsp;or&nbsp;the&nbsp;command&nbsp;is&nbsp;invalid,&nbsp;the&nbsp;client&nbsp;will&nbsp;continue&nbsp;to<br>
+ask&nbsp;for&nbsp;a&nbsp;command&nbsp;until&nbsp;the&nbsp;session&nbsp;is&nbsp;ended&nbsp;by&nbsp;the&nbsp;user.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="socket.html">socket</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="client.html#ClientSocket">ClientSocket</a>
+</font></dt><dt><font face="helvetica, arial"><a href="client.html#Form">Form</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ClientSocket">class <strong>ClientSocket</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ClientSocket-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ClientSocket-clear_screen"><strong>clear_screen</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;screen</tt></dd></dl>
+
+<dl><dt><a name="ClientSocket-connection"><strong>connection</strong></a>(self)</dt><dd><tt>Send&nbsp;and&nbsp;receive&nbsp;messages&nbsp;to&nbsp;and&nbsp;from&nbsp;the&nbsp;server.<br>
+Set&nbsp;conditions&nbsp;depending&nbsp;on&nbsp;which&nbsp;commands&nbsp;are&nbsp;entered&nbsp;into&nbsp;the&nbsp;command&nbsp;prompt.<br>
+Some&nbsp;commands&nbsp;are&nbsp;sent&nbsp;to&nbsp;the&nbsp;server&nbsp;so&nbsp;as&nbsp;to&nbsp;receive&nbsp;certain&nbsp;responses,&nbsp;and<br>
+others&nbsp;are&nbsp;used&nbsp;on&nbsp;the&nbsp;client's&nbsp;side.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>BUFFER_SIZE</strong> = 1024</dl>
+
+<dl><dt><strong>HEADER_SIZE</strong> = 10</dl>
+
+<dl><dt><strong>HISTORY</strong> = []</dl>
+
+<dl><dt><strong>HOST</strong> = '127.0.0.1'</dl>
+
+<dl><dt><strong>PORT</strong> = 1111</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Form">class <strong>Form</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Form-creation_form"><strong>creation_form</strong></a>(self)</dt><dd><tt>ToDo&nbsp;creatinon&nbsp;form.</tt></dd></dl>
+
+<dl><dt><a name="Form-deletion_form"><strong>deletion_form</strong></a>(self)</dt><dd><tt>ToDo&nbsp;deletion&nbsp;form</tt></dd></dl>
+
+<dl><dt><a name="Form-edition_form"><strong>edition_form</strong></a>(self)</dt><dd><tt>ToDo&nbsp;edition&nbsp;form</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-run_client"><strong>run_client</strong></a>()</dt></dl>
+ <dl><dt><a name="-system"><strong>system</strong></a>(command)</dt><dd><tt>Execute&nbsp;the&nbsp;command&nbsp;in&nbsp;a&nbsp;subshell.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>name</strong> = 'posix'</td></tr></table>
+</body></html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module server</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>server</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hermes/Code/utn/diplomatura_python/modulo_3/todo_list/server.py">/home/hermes/Code/utn/diplomatura_python/modulo_3/todo_list/server.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="db.data_base.html">db.data_base</a><br>
+</td><td width="25%" valign=top><a href="socket.html">socket</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="server.html#ServerSocket">ServerSocket</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ServerSocket">class <strong>ServerSocket</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ServerSocket-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-add_header"><strong>add_header</strong></a>(self, msg)</dt><dd><tt>Add&nbsp;a&nbsp;header&nbsp;to&nbsp;the&nbsp;passed&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-command_close"><strong>command_close</strong></a>(self)</dt><dd><tt>End&nbsp;the&nbsp;server&nbsp;session</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-command_count"><strong>command_count</strong></a>(self)</dt><dd><tt>Count&nbsp;the&nbsp;todos&nbsp;stored&nbsp;in&nbsp;the&nbsp;database</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-command_search"><strong>command_search</strong></a>(self, args=None)</dt><dd><tt>Search&nbsp;todos&nbsp;by&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-command_sort"><strong>command_sort</strong></a>(self, args=None)</dt><dd><tt>Sort&nbsp;the&nbsp;todos&nbsp;by&nbsp;the&nbsp;argument&nbsp;passed.&nbsp;Optionally&nbsp;the&nbsp;user&nbsp;can<br>
+include&nbsp;the&nbsp;'desc'&nbsp;argument&nbsp;to&nbsp;sort&nbsp;the&nbsp;results&nbsp;downwards.</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-command_todo"><strong>command_todo</strong></a>(self, args=None)</dt><dd><tt>Connect&nbsp;to&nbsp;the&nbsp;database&nbsp;depending&nbsp;on&nbsp;the&nbsp;argument&nbsp;included&nbsp;with&nbsp;the<br>
+todo&nbsp;command.</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-connection"><strong>connection</strong></a>(self)</dt><dd><tt>Receive&nbsp;the&nbsp;messages&nbsp;and&nbsp;parse&nbsp;them&nbsp;so&nbsp;as&nbsp;to&nbsp;determine&nbsp;which&nbsp;commands&nbsp;where<br>
+sent&nbsp;by&nbsp;the&nbsp;client.</tt></dd></dl>
+
+<dl><dt><a name="ServerSocket-parse_command"><strong>parse_command</strong></a>(self, command)</dt><dd><tt>Split&nbsp;the&nbsp;message&nbsp;sent&nbsp;by&nbsp;the&nbsp;client,&nbsp;get&nbsp;the&nbsp;commands&nbsp;and&nbsp;the&nbsp;arguments.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>COMMAND_ERROR_MSG</strong> = '<font color="#c040c0">\n\x1b</font>[1m<font color="#c040c0">\x1b</font>[91m| ERROR |<font color="#c040c0">\x1b</font>[0m<font color="#c040c0">\x1b</font>[0m Command error! Please try again!<font color="#c040c0">\n</font>'</dl>
+
+<dl><dt><strong>ERROR_HEAD</strong> = '<font color="#c040c0">\x1b</font>[1m<font color="#c040c0">\x1b</font>[91m| ERROR |<font color="#c040c0">\x1b</font>[0m<font color="#c040c0">\x1b</font>[0m '</dl>
+
+<dl><dt><strong>HEADER_SIZE</strong> = 10</dl>
+
+<dl><dt><strong>HOST</strong> = '127.0.0.1'</dl>
+
+<dl><dt><strong>INFO_HEAD</strong> = '<font color="#c040c0">\x1b</font>[1m<font color="#c040c0">\x1b</font>[38;5;2m| INFO |<font color="#c040c0">\x1b</font>[0m<font color="#c040c0">\x1b</font>[0m '</dl>
+
+<dl><dt><strong>PORT</strong> = 1111</dl>
+
+<dl><dt><strong>VALID_COMMANDS</strong> = ['close', 'count', 'end', 'exit', 's', 'search', 'sort', 'todo', 'x']</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-run_server"><strong>run_server</strong></a>()</dt></dl>
+</td></tr></table>
+</body></html>
