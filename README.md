@@ -1,68 +1,68 @@
 # todo_list_creator_python
 
-This is a ToDo List application that allows the user to create, edit, and
-delete todos with a text limit of 150 characters. It is built with the
+This is a ToDo List application that allows the user to create, edit, and*
+delete todos with a text limit of 150 characters. It is built with the*
 Tkinter library.
 
-At load it asks the user whether the program should open the ToDo List
-main window or if it should run in server mode, i.e. a server socket
-(server.py) is ran instead of the application so as to receive and
-respond different requests from a client application (client.py). The
+At load it asks the user whether the program should open the ToDo List*
+main window or if it should run in server mode, i.e. a server socket*
+(server.py) is ran instead of the application so as to receive and*
+respond different requests from a client application (client.py). The*
 server.py module can run as a standalone program.
 
-The client can send any of the following commands:
+The client can send any of the following commands:\_
 
-•••••••••••••••••••••• TODO LIST - Handled by the server ••••••••••••••••••••••
-count
+•••••••••••••••••••••• TODO LIST - Handled by the server ••••••••••••••••••••••_
+count_
 Get the number of todos stored in the database.
 
-s / search [text to search]
+s / search [text to search]\_
 Search todos by text. If no argument is entered, all todos will be displayed.
 
-sort [color / date / id / text] [desc]
-Get all the todos sorted by the argument entered.
+sort [color / date / id / text] [desc]_
+Get all the todos sorted by the argument entered._
 Optional: enter 'desc' to sort downwards.
 
-todo [del / delete / edit / save]
-Open the todo editor.
-Enter 'del' or 'delete' to remove a todo by its ID number.
-Enter 'edit' to update a todo by its ID number.
-Enter 'save' to create a new todo.
-•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+todo [del / delete / edit / save]_
+Open the todo editor._
+Enter 'del' or 'delete' to remove a todo by its ID number._
+Enter 'edit' to update a todo by its ID number._
+Enter 'save' to create a new todo._
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••_
 
-••••••••••••••••••••••• CONSOLE - Handled by the client •••••••••••••••••••••••
-clear
+••••••••••••••••••••••• CONSOLE - Handled by the client •••••••••••••••••••••••_
+clear_
 Clear the screen.
 
-clh
+clh\_
 Clear the command history.
 
-close / end / exit / x
+close / end / exit / x\_
 Exit client and shut down the server.
 
-commands
+commands\_
 Clear the screen and print the command list.
 
-h
-Command history.
-•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+h*
+Command history.*
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\_
 
-When not running in server mode, the window shows a create/edit form and a
+When not running in server mode, the window shows a create/edit form and a\_
 canvas.
 
-The form bears an Entry for the text, a DateEntry, two Spins (one for the
-hours, one for the minutes, both max values of which are limited accordingly),
-and a creation button (labeled with a "+"; it is replaced with an "Edit"
+The form bears an Entry for the text, a DateEntry, two Spins (one for the*
+hours, one for the minutes, both max values of which are limited accordingly),*
+and a creation button (labeled with a "+"; it is replaced with an "Edit"\_
 button when any of the todos' edition buttons is clicked).
 
-All the todos saved into the database will be inserted into the canvas as
-follows: one main square of 200x200 with a fill color chose by the user; a
-little black rectangle on top that shows the date and time (or an "Expired"
-message when the time is older than the present time); a dark blue, and a
-dark red rectangles (the former acts as the "Edit" button; the latter as the
-"Delete" button), both of wich have a width of half the square's width. Each
+All the todos saved into the database will be inserted into the canvas as*
+follows: one main square of 200x200 with a fill color chose by the user; a*
+little black rectangle on top that shows the date and time (or an "Expired"_
+message when the time is older than the present time); a dark blue, and a_
+dark red rectangles (the former acts as the "Edit" button; the latter as the*
+"Delete" button), both of wich have a width of half the square's width. Each*
 of these two buttons is bind with its corresponding method.
 
-When editing a todo, the form will fill with all the todo data, including the
-color, except when the todo is expired and its color is grey, in which case
+When editing a todo, the form will fill with all the todo data, including the*
+color, except when the todo is expired and its color is grey, in which case*
 the color selected in the color combobox is the first option.
