@@ -64,6 +64,8 @@ class ToDoListApp:
     y1 = 250
 
     def __init__(self, root):
+        DB.DataBase().create_table()
+
         self.root = root
         self.root.geometry("1315x850")
         self.root.resizable(False, False)
@@ -505,18 +507,18 @@ class ToDoListApp:
         """Convert datetime object to string"""
         return datetime.strftime(datetime_obj, "%d/%m/%Y %H:%M:%S")
 
-    def _set_max_value(self, event, value, max_value):
-        """Set max values"""
-        self._prevent_wrong_type(event, value)
+    def _change_entry_color(self, count):
+        """Change the text entry color depending on the text extension"""
+        if count <= 10:
+            self.ent_todo["fg"] = "Red"
+        else:
+            self.ent_todo["fg"] = "Black"
 
-        if int(value.get()) > max_value:
-            value.set(str(max_value))
-
-    def _prevent_wrong_type(self, event, value):
-        """Prevent entering a wrong type of character"""
-        for char in value.get():
-            if ord(char) < 48 or ord(char) > 57:
-                value.set(value.get().replace(char, ""))
+    def _count_chars(self, count):
+        """Update the characters left in the text entry and show the message
+        in the label below the entry.
+        """
+        self.lbl_char_count["text"] = "%s characters left" % (count)
 
     def _on_edit_btn_click(self, id):
         """Call the update() method from the ToDo module, reset the form, and
@@ -551,23 +553,6 @@ class ToDoListApp:
         self._change_entry_color(count)
         self._set_char_limit(self.val_todo, 150)
 
-    def _count_chars(self, count):
-        """Update the characters left in the text entry and show the message
-        in the label below the entry.
-        """
-        self.lbl_char_count["text"] = "%s characters left" % (count)
-
-    def _set_char_limit(self, value, limit):
-        """The user cannot write more than 150 characters in the text entry"""
-        value.set(value.get()[:limit])
-
-    def _change_entry_color(self, count):
-        """Change the text entry color depending on the text extension"""
-        if count <= 10:
-            self.ent_todo["fg"] = "Red"
-        else:
-            self.ent_todo["fg"] = "Black"
-
     def _on_mousewheel_down(self, event, canvas):
         """Mousewheel scrolling down"""
         canvas.yview_scroll(-1, "units")
@@ -575,6 +560,16 @@ class ToDoListApp:
     def _on_mousewheel_up(self, event, canvas):
         """Mousewheel scrolling up"""
         canvas.yview_scroll(1, "units")
+
+    def _prevent_wrong_type(self, event, value):
+        """Prevent entering a wrong type of character"""
+        for char in value.get():
+            if ord(char) < 48 or ord(char) > 57:
+                value.set(value.get().replace(char, ""))
+
+    def _set_char_limit(self, value, limit):
+        """The user cannot write more than 150 characters in the text entry"""
+        value.set(value.get()[:limit])
 
     def _set_coords(self):
         """Reset the canvas coordinates when reaching the top of todos per
@@ -585,6 +580,14 @@ class ToDoListApp:
             ToDoListApp.x1 = 250
             ToDoListApp.y0 += 250
             ToDoListApp.y1 += 250
+
+    def _set_max_value(self, event, value, max_value):
+        """Set max values"""
+        self._prevent_wrong_type(event, value)
+
+        if value.get():
+            if int(value.get()) > max_value:
+                value.set(str(max_value))
 
     def _set_timestamp(self):
         """Set the full date"""
@@ -621,7 +624,6 @@ def quit(root, canvas, id):
 
 
 def main():
-    DB.DataBase().create_table()
     win = Tk()
     win.withdraw()
 
