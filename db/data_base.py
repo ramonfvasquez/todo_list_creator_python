@@ -44,6 +44,8 @@ class DataBase:
                 "Deletion Error", "An error occurred while trying to delete the todo."
             )
 
+            return f"ToDo DELETION ERROR: NON-EXISTENT id={id}"
+
     def get_record_by_id(self, id):
         """Get a record by it ID number"""
         try:
@@ -76,10 +78,15 @@ class DataBase:
 
     @log
     def insert(self, date, text, color):
-        """Insert a record"""
-        ToDo.create(date=date, text=text, color=color)
+        try:
+            """Insert a record"""
+            ToDo.create(date=date, text=text, color=color)
 
-        return f"ToDo CREATED: text={text}; date={date}; color={color}"
+            return f"ToDo CREATED: text={text}; date={date}; color={color}"
+        except:
+            print("Insertion Error", "An error occurred while trying to insert a todo.")
+
+            return f"ToDo CREATION ERROR: CANNOT INSERT text={text}; date={date}; color={color}"
 
     def read_table(self):
         return ToDo.select()
@@ -99,8 +106,13 @@ class DataBase:
 
     @log
     def update(self, id, date, text, color):
-        """Update a record"""
-        update = ToDo.update(date=date, text=text, color=color).where(ToDo.id == id)
-        update.execute()
+        try:
+            """Update a record"""
+            update = ToDo.update(date=date, text=text, color=color).where(ToDo.id == id)
+            update.execute()
 
-        return f"ToDo UPDATED: id={id}; text={text}; date={date}; color={color}"
+            return f"ToDo UPDATED: id={id}; text={text}; date={date}; color={color}"
+        except:
+            print("Update Error", "An error occurred while trying to update the todo.")
+
+            return f"ToDo UPDATE ERROR: CANNOT UPDATE id={id}; text={text}; date={date}; color={color}"
